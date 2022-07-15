@@ -99,3 +99,5 @@ then
 else
     echo -e "${GREEN} * DOCKER IS INSTALLED${NC}"
 fi
+
+ln -s $HOME/dotfiles/.gitconfig $HOME/.gitconfig

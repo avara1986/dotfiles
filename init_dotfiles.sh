@@ -31,7 +31,7 @@ fi
 if ! command -v i3 &> /dev/null
 then
     echo -e "I3 could not be found. Installing"
-    sudo apt-get install -y i3 gnome-screenshot
+    sudo apt-get install -y i3 gnome-screenshot feh
     rm $I3_CONFIG
     # sudo apt-get install polybar rofi
     # git submodule add https://github.com/nimishgo/i3wm-themes.git

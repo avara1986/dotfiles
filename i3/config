@@ -184,3 +184,43 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+
+# ################
+# Alberto Config
+# ################
+focus_follows_mouse no
+
+# Logout and Shutdown
+bindsym $mod+Shift+h exec "i3-nagbar -t warning -m 'Shutdown ?' -b 'Yeah, sure' 'shutdown -h now'"
+
+# Move workspace to other windows
+bindsym $mod+x move workspace to output right
+
+# lock session with black screen
+bindsym $mod+Ctrl+l exec i3lock -u -c 000000
+
+# Wallpaper: sudo apt install feh
+exec --no-startup-id feh --bg-scale ~/dotfiles/wallpapers/onepunchman.jpg
+
+# Open pycharm
+bindsym $mod+p exec ./pycharm/bin/pycharm.sh
+
+# Enable monitors:s
+# xrandr
+# xrandr --output [SECONDARY: I.E: DP1] --auto --left-of [MAIN, I.E: eDP1]
+
+# Screenshots:
+bindsym Control+Print exec gnome-screenshot -i
+
+# Enabled compton to opacity windows:
+exec --no-startup-id compton --config ~/.config/i3/compton.conf
+
+mode "moveit" {
+    bindsym Up move up 20px
+    bindsym Left move left 20px
+    bindsym Down move down 20px
+    bindsym Right move right 20px
+    bindsym Mod4+m mode "default"
+}
+bindsym Mod4+m focus floating; mode "moveit"

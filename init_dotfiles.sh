@@ -7,7 +7,7 @@ GREEN='\033[0;32m'
 
 ## CONSTANTS
 ZSH_DOT_FILE="$HOME/.zshrc"
-I3_CONFIG="$HOME/dotfiles/i3/config"
+I3_CONFIG="$HOME/.config/i3"
 
 if ! command -v zsh &> /dev/null
 then
@@ -31,7 +31,7 @@ fi
 if ! command -v i3 &> /dev/null
 then
     echo -e "I3 could not be found. Installing"
-    sudo apt-get install -y i3
+    sudo apt-get install -y i3 gnome-screenshot
     rm $I3_CONFIG
     # sudo apt-get install polybar rofi
     # git submodule add https://github.com/nimishgo/i3wm-themes.git
@@ -48,7 +48,9 @@ if [ -f "$I3_CONFIG" ]
 then
     echo -e "${GREEN} * ${I3_CONFIG} exists ${NC}"
 else
-    ln -s $HOME/dotfiles/i3/config $I3_CONFIG
+	mkdir $I3_CONFIG
+    ln -s $HOME/dotfiles/i3/config $I3_CONFIG/config
+    ln -s $HOME/dotfiles/i3/compton.conf $I3_CONFIG/compton.conf
 fi
 
 if ! command -v pyenv &> /dev/null

@@ -75,6 +75,8 @@ then
     git clone https://github.com/pyenv/pyenv.git $HOME/.pyenv
     pyenv install 2.7:latest
     pyenv install 3.6:latest
+    
+    git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 else	
     echo -e "${GREEN} * PYENV IS INSTALLED${NC}"
 fi

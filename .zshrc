@@ -109,7 +109,7 @@ source $ZSH/oh-my-zsh.sh
 # PYTHON CONFIG
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
+eval "$(pyenv init -)"
 
 # DOCKER CONFIG
 # newgrp docker
